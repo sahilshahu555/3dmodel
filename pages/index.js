@@ -1,6 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import React, { useState } from "react";
 import Character from "../components/Character";
+import Character2 from "../components/Character2Sphere";
+
 import { OrbitControls } from "@react-three/drei";
 
 const index = () => {
@@ -18,14 +20,16 @@ const index = () => {
 
   const [currentAnimationName, setCurrentAnimationName] = useState("golf");
   return (
-    <div className="w-[100vw] h-[100vh]">
+    <div className="w-[100vw] h-[100vh] bg-gray-500">
       <Canvas>
         <OrbitControls />
         <ambientLight />
         <directionalLight position={[-5, 5, 5]} />
-        <Character currentAnimationName={currentAnimationName} />
+        {/* <Character currentAnimationName={currentAnimationName} /> */}
+        <Character2 currentAnimationName={currentAnimationName} />
+
       </Canvas>
-      <div className="absolute top-0 right-3 flex flex-col justify-center h-[100vh]">
+      {/* <div className="absolute top-0 right-3 flex flex-col justify-center h-[100vh]">
         {allAnimation.map((name, i) => {
           return (
             <div key={i} className="bg-green-500 m-2 rounded-2xl text-center">
@@ -38,7 +42,7 @@ const index = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
